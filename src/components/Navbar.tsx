@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { LogOutIcon, Moon, Sun, Settings, User } from "lucide-react";
+import { LogOutIcon, Moon, Sun, Settings, User, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -14,16 +14,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "./ui/button";
-import { SidebarTrigger } from "./ui/sidebar";
+import { useSidebar } from "./ui/sidebar";
+// import { SidebarTrigger } from "./ui/sidebar";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
+  const {toggleSidebar} = useSidebar()
 
   return (
     <nav className="flex items-center justify-between p-4">
       {/* left side */}
+
+      {/* default toggle  */}
       {/* <SidebarTrigger /> */}
-      <Button ></Button>
+
+      {/* custom toggle */}
+      <Button variant="outline" onClick={toggleSidebar} > <ArrowRight /></Button>
 
 
       {/* right side */}

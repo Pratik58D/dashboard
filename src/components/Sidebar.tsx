@@ -3,6 +3,8 @@ import {
   ChevronUp,
   HomeIcon,
   InboxIcon,
+  Plus,
+  Projector,
   SearchIcon,
   SettingsIcon,
   User2,
@@ -13,6 +15,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
@@ -93,6 +96,31 @@ const AppSidebar = () => {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupAction title="Add Project">
+            <Plus />
+            <span className="sr-only"> Add Projects</span>
+          </SidebarGroupAction>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <Link href="/#">
+                  <Projector />
+                  See All Projects
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+              <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <Link href="/#">
+                  <Plus />
+                  Add Project
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroup>
       </SidebarContent>
 
       <SidebarFooter>
@@ -103,13 +131,12 @@ const AppSidebar = () => {
                 <SidebarMenuButton>
                   <User2 /> Pratik Dev <ChevronUp className="ml-auto" />
                 </SidebarMenuButton>
-              </DropdownMenuTrigger>  
+              </DropdownMenuTrigger>
 
               <DropdownMenuContent align="end">
                 <DropdownMenuLabel>Account</DropdownMenuLabel>
                 <DropdownMenuItem>Settings</DropdownMenuItem>
                 <DropdownMenuItem>Sign out</DropdownMenuItem>
-               
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
